@@ -1,0 +1,45 @@
+.LandBlocksList {
+    font-family: "Segoe UI",Arial,sans-serif;
+    background-color: #F1F1F1;
+    width: 130px;
+    height: 100%;
+    float: left;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.LandBlocksListHeader {
+    font-size: 21px;
+    margin-bottom: 4px;
+    text-align: center;
+}
+
+.LandBlocksListItem {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.LandBlocksListItem a {
+    display: inline-block;
+    font-size: 15px;
+    padding-bottom: 2px;
+    padding-left: 5px;
+    text-decoration: none;
+}
+
+.LandBlocksListItem.selected {
+    background-color: #4CAF50;
+}
+
+.LandBlocksListItem.selected a {
+    color: #ffffff;
+}
+
+.LandBlocksListItem a:active {
+    color: #000000;
+}
+
+.LandBlocksListItem:hover {
+    background-color: #cccccc;
+    color: #000000;
+}

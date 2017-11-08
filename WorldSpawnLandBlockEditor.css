@@ -1,0 +1,10 @@
+.worldspawn-landblock-editor input, select {
+    width: 250px;
+    display:block;
+}
+
+.worldspawn-landblock-editor-group {
+    display:inline-block;
+    margin-left: 5px;
+    margin-right: 15px;
+}
