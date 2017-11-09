@@ -38,7 +38,7 @@
         const Switch = window.ReactRouterDOM.Switch;
         const Redirect = window.ReactRouterDOM.Redirect;
 
-        const WAMP_URL = "http://localhost/editor/";
+        const WAMP_URL = "http://localhost/WorldEditor/";
 
         ReactDOM.render(
             <WorldEditor />,

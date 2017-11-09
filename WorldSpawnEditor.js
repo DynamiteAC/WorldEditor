@@ -40,18 +40,65 @@ class WorldSpawnEditor extends React.Component {
         event.target.className = classes;
     }
 
+    onClickAdd(event) {
+        var newLandblock = {
+            key : 458752,
+            custom : {
+                name : "new-land-block"
+            },
+            value : {
+                weenies : [
+                    {
+                        id: 86766304,
+                        pos: {
+                            frame: {
+                                angles: {
+                                    w: 0,
+                                    x: 0,
+                                    y: 0,
+                                    z: -1
+                                },
+                                origin: {
+                                    x: 60,
+                                    y: -85.245,
+                                    z: 6
+                                }
+                            },
+                            objcell_id: 2315387412
+                        },
+                        wcid: 15451,
+                        custom: {
+                            name: "test"
+                        }
+                    }
+                ]
+            }
+        };
+        this.props.worldspawn.landblocks.push(newLandblock);
+        this.onUpdate();
+    }
+
+    onClickDelete(event) {
+        this.props.worldspawn.landblocks.splice(event.target.id, 1);
+        this.onUpdate();
+    }
+
     render() {
         return (
             <div>
                 <div className="LandBlocksList">
                     <div className="LandBlocksListHeader">LandBlocks</div>
                     <div style={{textAlign: "center", marginBottom: "5px"}}>
-                        <LinkButton id="add" mainClassName="DeleteButton" disabledClassName="LinkButtonDisabled" selectedClassName="LinkButtonSelected">Add</LinkButton>
+                        <LinkButton id="add" mainClassName="DeleteButton" disabledClassName="LinkButtonDisabled" selectedClassName="LinkButtonSelected"
+                                    onClick={this.onClickAdd.bind(this)}>Add</LinkButton>
                     </div>
                     {this.props.worldspawn.landblocks.map((landblock,i) => {
+                        console.log(landblock);
                         return (
                             <div key={i}>
-                                <LinkButton id="delete" style={{float: "left"}} mainClassName="DeleteButton" disabledClassName="LinkButtonDisabled" selectedClassName="LinkButtonSelected">Del</LinkButton>
+                                <LinkButton id={i} style={{float: "left"}} mainClassName="DeleteButton" disabledClassName="LinkButtonDisabled" selectedClassName="LinkButtonSelected"
+                                            onClick={this.onClickDelete.bind(this)}
+                                    >Del</LinkButton>
                                 <div className={this.cssLandBlocksListItem(i)}>
                                     <a href="#" id={i} onClick={event => {
                                         event.preventDefault();

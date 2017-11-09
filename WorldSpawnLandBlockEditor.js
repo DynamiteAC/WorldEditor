@@ -24,7 +24,7 @@ class WorldSpawnLandBlockEditor extends React.Component {
     updateNumValue(event, updateFunc) {
         var val = event.target.value;
         if (typeof val === 'string') {
-            val = parseInt(val);
+            val = parseFloat(val);
         }
         updateFunc(val);
         this.setState(prevState => prevState);
@@ -126,7 +126,7 @@ class WorldSpawnLandBlockEditor extends React.Component {
                 <h2>Position</h2>
                 <div className="worldspawn-landblock-editor-group">
                     <label>LOC String:</label>
-                    <input name="loc_string" size="85" style={{width: "520px"}} value={this.genPositionString()} onChange={this.positionStringChanged.bind(this)}/>
+                    <input name="loc_string" size="85" style={{width: "520px"}} disabled value={this.genPositionString()}/>
                 </div>
                 <div>
                     <div className="worldspawn-landblock-editor-group">
